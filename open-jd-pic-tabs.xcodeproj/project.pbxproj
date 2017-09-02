@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9305A5C61F5A863100FFC56C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305A5C51F5A863100FFC56C /* main.m */; };
+		9305A5D31F5A86BB00FFC56C /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305A5CF1F5A86BB00FFC56C /* HTMLNode.m */; };
+		9305A5D41F5A86BB00FFC56C /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305A5D11F5A86BB00FFC56C /* HTMLParser.m */; };
+		9305A5D51F5A86BB00FFC56C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9305A5D21F5A86BB00FFC56C /* README.md */; };
+		9305A5DA1F5A8B6500FFC56C /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305A5D91F5A8B6500FFC56C /* libxml2.2.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,12 @@
 /* Begin PBXFileReference section */
 		9305A5C21F5A863100FFC56C /* open-jd-pic-tabs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "open-jd-pic-tabs"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9305A5C51F5A863100FFC56C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9305A5CE1F5A86BB00FFC56C /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		9305A5CF1F5A86BB00FFC56C /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		9305A5D01F5A86BB00FFC56C /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		9305A5D11F5A86BB00FFC56C /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		9305A5D21F5A86BB00FFC56C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9305A5D91F5A8B6500FFC56C /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9305A5DA1F5A8B6500FFC56C /* libxml2.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +54,7 @@
 			children = (
 				9305A5C41F5A863100FFC56C /* open-jd-pic-tabs */,
 				9305A5C31F5A863100FFC56C /* Products */,
+				9305A5D61F5A874400FFC56C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +69,30 @@
 		9305A5C41F5A863100FFC56C /* open-jd-pic-tabs */ = {
 			isa = PBXGroup;
 			children = (
+				9305A5CD1F5A86BB00FFC56C /* HTMLParser */,
 				9305A5C51F5A863100FFC56C /* main.m */,
 			);
 			path = "open-jd-pic-tabs";
+			sourceTree = "<group>";
+		};
+		9305A5CD1F5A86BB00FFC56C /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				9305A5CE1F5A86BB00FFC56C /* HTMLNode.h */,
+				9305A5CF1F5A86BB00FFC56C /* HTMLNode.m */,
+				9305A5D01F5A86BB00FFC56C /* HTMLParser.h */,
+				9305A5D11F5A86BB00FFC56C /* HTMLParser.m */,
+				9305A5D21F5A86BB00FFC56C /* README.md */,
+			);
+			path = HTMLParser;
+			sourceTree = "<group>";
+		};
+		9305A5D61F5A874400FFC56C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9305A5D91F5A8B6500FFC56C /* libxml2.2.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9305A5D31F5A86BB00FFC56C /* HTMLNode.m in Sources */,
+				9305A5D41F5A86BB00FFC56C /* HTMLParser.m in Sources */,
+				9305A5D51F5A86BB00FFC56C /* README.md in Sources */,
 				9305A5C61F5A863100FFC56C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +254,7 @@
 		9305A5CA1F5A863100FFC56C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -225,6 +262,7 @@
 		9305A5CB1F5A863100FFC56C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
